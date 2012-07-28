@@ -34,7 +34,7 @@ body {
 	background: url(../assets/classy_fabric.png);
 	color: white;
 	font-size: 20px;
-	font-family: "Terminal Dosis", sans-serif;
+	font-family: "Jura", sans-serif;
 	text-shadow: 
 		1px 1px 0 transparent,
 		2px 2px 0 #101010;
@@ -135,54 +135,61 @@ nav a:hover {
 	display: inline-block;
 }
 
-.demo { 
+.step1 { 
 	width: 800px;
 	font-size: 30px;
 	text-align: center;
 	font-weight: bold;
 }
 
-.demo .arrow {
+.step1 .arrow {
 	font-size: 20px;
 	animation: point-down 0.5s alternate infinite;
 }
 
-.description {
+.step2 {
 	top: 740px;
 	left: 180px;
 	width: 440px;
 }
 
-.syntax {
+.step3 {
 	top: 1510px;
 	left: 430px;
 	width: 400px;
+	text-align: center;
 }
 
-.scrollbar {
+.step4 {
 	top: 1540px;
 	left: 1600px;
 	width: 400px;
+	text-align: center;
 }
 
-.rotations {
+.step5 {
 	left: 2185px;
 	top: 660px;
-	width: 460px;
-	transform: rotate(-90deg) translateY(2.5em);
+	width: 620px;
+	transform: rotate(-90deg) translateY(3.5em);
 }
 
-.rotations .upside-down {
+.step5 .upside-down {
 	font-size: 42px;
 	text-align: right;
-	transform: rotate(180deg) translateY(3em);
+	transform: rotate(180deg) translateY(7em);
 }
 
-.source {
+.step6 {
 	left: 2200px;
 	top: -800px;
 	width: 400px;
 	transform: rotate(90deg) translateX(50px);
+}
+.step6 {
+	left: 1000px;
+	top: 660px;
+	width: 580px;
 }
 
 .follow {
@@ -213,4 +220,29 @@ nav a:hover {
 	to {
 		background: lightblue;
 	}
+}
+
+button.text {
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-bottom: 10px;
+	border: none;
+	color: skyblue;
+	background: black;
+	transform: rotate(-2deg);
+}
+span.c1 {
+	background: black;
+	color: orange;
+	transform: rotate(2deg);
+	padding: 2px 5px;
+	display: inline-block;
+}
+span.c2 {
+	background: black;
+	color: red;
+	transform: rotate(1deg);
+	padding: 2px 5px;
+	display: inline-block;
 }

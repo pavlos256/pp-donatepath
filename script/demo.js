@@ -4,62 +4,60 @@ function init() {
 	/* ========== DRAWING THE PATH AND INITIATING THE PLUGIN ============= */
 
 	$.fn.scrollPath("getPath")
-		// Move to 'start' element
-		.moveTo(400, 50, {name: "start"})
-		// Line to 'description' element
-		.lineTo(400, 800, {name: "description"})
-		// Arc down and line to 'syntax'
+		// Move to 'step1' element
+		.moveTo(400, 50, {name: "step1"})
+		// Line to 'step2' element
+		.lineTo(400, 800, {name: "step2"})
+		// Arc down and line to 'step3'
 		.arc(200, 1200, 400, -Math.PI/2, Math.PI/2, true)
 		.lineTo(600, 1600, {
 			callback: function() {
-				highlight($(".settings"));
+				setTimeout(function() {
+					highlight($("#btn3to4"))
+				}, 2000);
 			},
-			name: "syntax"
+			name: "step3"
 		})
-		// Continue line to 'scrollbar'
-		.lineTo(1750, 1600, {
-			callback: function() {
-				highlight($(".sp-scroll-handle"));
-			},
-			name: "scrollbar"
-		})
+		// Continue line to 'step4'
+		.lineTo(1750, 1600, {name: "step4"})
 		// Arc up while rotating
 		.arc(1800, 1000, 600, Math.PI/2, 0, true, {rotate: Math.PI/2 })
-		// Line to 'rotations'
+		// Line to 'step5'
 		.lineTo(2400, 750, {
-			name: "rotations"
+			name: "step5"
 		})
 		// Rotate in place
 		.rotate(3*Math.PI/2, {
-			name: "rotations-rotated"
+			name: "step5-rotated",
+			callback: function() {
+				setTimeout(function() {
+					var btn = $("#btn5to6");
+					btn.css({visibility:"visible"});
+					function addO() {
+						var txt = btn.text();
+						if (txt.length < 5) {
+							btn.text(txt + txt[0]);
+							setTimeout(addO, 250);
+						}
+					}
+					setTimeout(addO, 250);
+				}, 750);
+			}
 		})
-		// Continue upwards to 'source'
-		.lineTo(2400, -700, {
-			name: "source"
-		})
-		// Small arc downwards
-		.arc(2250, -700, 150, 0, -Math.PI/2, true)
-
-		//Line to 'follow'
-		.lineTo(1350, -850, {
-			name: "follow"
-		})
-		// Arc and rotate back to the beginning.
-		.arc(1300, 50, 900, -Math.PI/2, -Math.PI, true, {rotate: Math.PI*2, name: "end"});
+		
+		// Continue to 'step6'
+		.lineTo(1000+580/2, 660, {
+			name: "step6"
+		});
 
 	// We're done with the path, let's initate the plugin on our wrapper element
-	$(".wrapper").scrollPath({drawPath: true, wrapAround: true});
+	$(".wrapper").scrollPath({drawPath: false, wrapAround: false, scrollBar: false});
 
-	// Add scrollTo on click on the navigation anchors
-	$("nav").find("a").each(function() {
-		var target = $(this).attr("href").replace("#", "");
-		$(this).click(function(e) {
-			e.preventDefault();
-			
-			// Include the jQuery easing plugin (http://gsgd.co.uk/sandbox/jquery/easing/)
-			// for extra easing functions like the one below
-			$.fn.scrollPath("scrollTo", target, 1000, "easeInOutSine");
-		});
+	$("button.text").click(function() {
+		var target = $(this).data("goto");
+		// Include the jQuery easing plugin (http://gsgd.co.uk/sandbox/jquery/easing/)
+		// for extra easing functions like the one below
+		$.fn.scrollPath("scrollTo", target, 1000, "easeInOutSine");
 	});
 
 	/* ===================================================================== */
