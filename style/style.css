@@ -181,7 +181,7 @@ nav a:hover {
 }
 
 .step6 {
-	left: 2200px;
+	left: 2185px;
 	top: -800px;
 	width: 400px;
 	transform: rotate(90deg) translateX(50px);
@@ -192,19 +192,61 @@ nav a:hover {
 	width: 580px;
 }
 
-.follow {
-	width: 475px;
-	left: 1100px;
-	top: -950px;
-	transform: rotate(90deg) translateX(50px);
+div.journey {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
-
-.follow .big {
-	font-size: 40px;
+.journey .ship {
+	background-image: url("../assets/ship.png");
+	bottom: 24px;
+	height: 200px;
+	position: relative;
+	width: 364px;
+	animation: 2s ease alternate infinite ship;
+	transform-origin: 20% 90%;
+}
+.journey .sea {
+	bottom: 0px;
+	height: 54px;
+	position: absolute;
+	width: 100%;
+}
+.sea .waves {
+	background-image: url("../assets/wave.png");
+	height: 24px;
+	position: relative;
+	width: 100%;
+	animation: 3s linear infinite waves;
+}
+.sea .bottom {
+	background-color: #202020;
+	height: 30px;
+	left: 0;
+	width: 100%;
 }
 
 .highlight {
 	animation: highlight 0.2s alternate 6 ;
+}
+
+@keyframes ship {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-3deg);
+	}
+}
+
+@keyframes waves {
+	from {
+		background-position: 120px 0;
+	}
+	to {
+		background-position: 0px 0;
+	}
 }
 
 @keyframes point-down {
@@ -232,6 +274,9 @@ button.text {
 	background: black;
 	transform: rotate(-2deg);
 }
+button.text:hover {
+	color: blueviolet;
+}
 span.c1 {
 	background: black;
 	color: orange;
@@ -245,4 +290,15 @@ span.c2 {
 	transform: rotate(1deg);
 	padding: 2px 5px;
 	display: inline-block;
+}
+#audiocontrol {
+	position: fixed;
+	top: 4px;
+	right: 4px;
+	width: 24px;
+	height: 24px;
+	background-image: url("../assets/audio-on.png");
+}
+#audiocontrol.off {
+	background-image: url("../assets/audio-off.png");
 }

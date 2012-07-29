@@ -1,44 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 		<link rel="stylesheet" type="text/css" href="style/style.css" /> 
-		<link rel="stylesheet" type="text/css" href="style/scrollpath.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="style/scrollpath.css" /> -->
 		<link href="http://fonts.googleapis.com/css?family=Jura:600&subset=latin,greek" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="script/lib/prefixfree.min.js"></script>
 		<!--[if lt IE 9]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<meta name="description" content="The plugin that lets you define custom scroll paths" /> 
-		<title>jQuery Scroll Path</title>
+		<!-- <meta name="description" content="" /> -->
+		<title>Κωπηλάτες</title>
 	</head>
 	<body>
-		<nav>
-			<ul>
-				<li><a href="#start">1</a></li>
-				<li><a href="#description">2</a></li>
-				<li><a href="#syntax">3</a></li>
-				<li><a href="#scrollbar">4</a></li>
-				<li><a href="#rotations">5</a></li>
-				<li><a href="#rotations-rotated">6</a></li>
-				<li><a href="#source">7</a></li>
-				<li><a href="#follow">8</a></li>
-			</ul>
-		</nav>
-		<div class="settings">
-			<a href="" class="show-path">Show Path</a>
-		</div>
 		<div class="wrapper">
 			<div class="step1">
-				<span class="big">Αν αυτό <span class="c1">ήταν βίντεο</span>,<br>δεν θα χρειαζόταν να</span>
+				<span class="big">Αν αυτό <span class="c1">ήταν βίντεο</span>,<br>δε θα χρειαζόταν να</span>
 				<span class="arrow">&darr;</span>
-					<button class="text" data-goto="step2">πατήσεις εδώ</button>
+					<button id="btn1to2" class="text" data-goto="step2">πατήσεις εδώ</button>
 				<span class="arrow">&darr;</span>
 			</div>
 			
 			<div class="step2">
 				<span class="big">Δεν θα<br>
-					<button class="text" style="margin-left:2em" data-goto="step3">συμμετείχες</button>&hellip;
+					<button id="btn2to3" class="text" style="margin-left:2em" data-goto="step3">συμμετείχες</button>&hellip;
 				</span>
 			</div>
 
@@ -49,30 +34,37 @@
 
 			<div class="step4">
 				<span class="big">Με την<br>
-					<button class="text" data-goto="step5">συμμετοχή</button> μας
+					<button id="btn4to5" class="text" data-goto="step5">συμμετοχή</button> μας
 				</span>
 			</div>
 
 			<div class="step5">
 				<span class="big" style="text-align:right">το ακατόρθωτο <img src="assets/ugh.png" style="vertical-align:middle"><br>
-					<button class="text" data-goto="step5-rotated">&rarr;</button>
+					<button id="btn5to5r" class="text" data-goto="step5-rotated">&rarr;</button>
 				</span>
 				<span class="upside-down big">γίνεται πραγματικότητα.<br>
 					<button id="btn5to6" style="visibility: hidden" class="text" data-goto="step6">ω</button></span>
 			</div>
 
 			<div class="step6">
-				<span class="big">It's available with documentation on <a href="https://github.com/JoelBesada/scrollpath">GitHub</a>.<span>
+				<span class="big">It's available with documentation on <a href="https://github.com/JoelBesada/scrollpath">GitHub</a>.</span>
 			</div>
-<!--
-			<div class="follow">
-				<span class="big">Feel free to <a href="https://twitter.com/JoelBesada">follow me</a> on Twitter. You can also be <span class="count">a kind person and</span> <a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ftwitter.com%2Fabout%2Fresources%2Fbuttons&source=tweetbutton&text=jQuery%20Scroll%20Path%20Plugin&url=http%3A%2F%2Fjoelb.me%2Fscrollpath%2F&via=JoelBesada" class="tweet">tweet</a> this.</span>
-			</div>
--->
+
 		</div>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
-	<script type="text/javascript" src="script/lib/jquery.easing.js"></script>
-	<script type="text/javascript" src="script/jquery.scrollpath.js"></script>
-	<script type="text/javascript" src="script/demo.js"></script>
+		<div class="journey">
+			<div class="ship"></div>
+			<div class="sea">
+				<div class="waves"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+		<script type="text/javascript" src="script/lib/jquery.easing.js"></script>
+		<script type="text/javascript" src="script/jquery.scrollpath.js"></script>
+		<script type="text/javascript" src="script/demo.js"></script>
+		<audio id="music" preload="none" style="display:none">
+			<source src="assets/08_Pirates.ogg" type="audio/ogg">
+		</audio>
+		<div id="audiocontrol" style="display:none"></div>
 	</body>
 </html>

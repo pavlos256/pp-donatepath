@@ -1,7 +1,6 @@
 $(document).ready(init);
 
 function init() {
-	/* ========== DRAWING THE PATH AND INITIATING THE PLUGIN ============= */
 
 	$.fn.scrollPath("getPath")
 		// Move to 'step1' element
@@ -24,7 +23,10 @@ function init() {
 		.arc(1800, 1000, 600, Math.PI/2, 0, true, {rotate: Math.PI/2 })
 		// Line to 'step5'
 		.lineTo(2400, 750, {
-			name: "step5"
+			name: "step5",
+			callback: function() {
+				$("#music").attr("preload", "auto");
+			}
 		})
 		// Rotate in place
 		.rotate(3*Math.PI/2, {
@@ -47,7 +49,12 @@ function init() {
 		
 		// Continue to 'step6'
 		.lineTo(1000+580/2, 660, {
-			name: "step6"
+			name: "step6",
+			callback: function() {
+				$(".journey").show("slow");
+				$("#audiocontrol").show();
+				$("#music").attr("autoplay", "true");
+			}
 		});
 
 	// We're done with the path, let's initate the plugin on our wrapper element
@@ -60,17 +67,19 @@ function init() {
 		$.fn.scrollPath("scrollTo", target, 1000, "easeInOutSine");
 	});
 
-	/* ===================================================================== */
-
-	$(".settings .show-path").click(function(e) {
-		e.preventDefault();
-		$(".sp-canvas").toggle();
-	}).toggle(function() {
-		$(this).text("Hide Path");
-	}, function() {
-		$(this).text("Show Path");
+	$("#audiocontrol").click(function() {
+		if ($("#audiocontrol").hasClass("off")) {
+			$("#music").get(0).play();
+			$("#audiocontrol").removeClass("off");
+		} else {
+			$("#music").get(0).pause();
+			$("#audiocontrol").addClass("off");
+		}
 	});
 
+	/* ===================================================================== */
+
+/*
 	$(".tweet").click(function(e) {
 		open(this.href, "", "width=550, height=450");
 		e.preventDefault();
@@ -82,19 +91,12 @@ function init() {
 					$(".follow .count").html("the " + ordinal(data.count + 1) + " kind person to");
 				}
 			});
-	}
-
+*/
+}
 
 function highlight(element) {
 	if(!element.hasClass("highlight")) {
 		element.addClass("highlight");
 		setTimeout(function() { element.removeClass("highlight"); }, 2000);
 	}
-}
-function ordinal(num) {
-	return num + (
-		(num % 10 == 1 && num % 100 != 11) ? 'st' :
-		(num % 10 == 2 && num % 100 != 12) ? 'nd' :
-		(num % 10 == 3 && num % 100 != 13) ? 'rd' : 'th'
-	);
 }

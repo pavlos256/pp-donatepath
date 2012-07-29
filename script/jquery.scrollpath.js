@@ -59,6 +59,7 @@
 				pathList = pathObject.getPath();
 				initCanvas();
 				initScrollBar();
+				$(document).scrollTop(0).scrollLeft(0);
 				scrollToStep( 0 ); // Go to the first step immediately
 				element.css( "position", "relative" );
 
@@ -404,6 +405,8 @@
 
 	/* Handles mousewheel scrolling */
 	function scrollHandler( e ) {
+		e.preventDefault(); return; // hack: no interaction allowed
+
 		var scrollDelta = e.originalEvent.wheelDelta || -e.originalEvent.detail,
 			dir = scrollDelta / ( Math.abs( scrollDelta ) );
 
@@ -416,6 +419,19 @@
 	function keyHandler( e ) {
 		// Disable scrolling with keys when user has focus on text input elements
 		if ( /^text/.test( e.target.type ) ) return;
+		switch (e.keyCode) {
+			case 40: // Down Arrow
+			case 38: // Up Arrow
+			case 34: //Page Down
+			case 33: //Page Up
+			case 32: // Spacebar
+			case 35: // End
+			case 36: //Home
+			case 37: //Home
+			case 39: //Home
+				e.preventDefault();
+				return; // hack: no interaction allowed
+		}
 		switch ( e.keyCode ) {
 			case 40: // Down Arrow
 				scrollSteps( STEP_SIZE );
