@@ -167,7 +167,7 @@ div.journey {
 	height: 200px;
 	position: relative;
 	width: 364px;
-	animation: 2s ease alternate infinite ship;
+	animation: ship 2s ease alternate infinite;
 	transform-origin: 20% 90%;
 }
 .journey .sea {
@@ -182,7 +182,7 @@ div.journey {
 	height: 24px;
 	position: relative;
 	width: 100%;
-	animation: 3s linear infinite waves;
+	animation: waves 3s linear infinite;
 }
 .sea .bottom {
 	background-color: #202020;
