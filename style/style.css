@@ -85,53 +85,6 @@ a:active {
 	position: absolute;
 }
 
-.settings, nav {
-	position: fixed;
-	z-index: 9999999;
-	bottom: 0;
-	background: rgba(10,10,10, 0.5);
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-size: 20px;
-}
-
-.settings {
-	right: 0;
-	padding: 10px 20px;
-	border-radius: 10px 0 0 0;
-}
-
-.settings a {
-	border: none;
-}
-
-nav {
-	left: 0;
-	border-radius: 0 10px 0 0;
-}
-
-nav li {
-	float: left;
-}
-
-nav a {
-	display: block;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	border: none;
-	text-align: center;
-	transition: 0.25s;
-}
-
-nav li:last-child a {
-	border-radius: 0 10px 0 0;
-}
-
-nav a:hover {
-	background: rgba(15,15,15, 0.5);
-}
-
 .sp-canvas {
 	display: none;
 }
@@ -187,19 +140,23 @@ nav a:hover {
 }
 
 .step6 {
-	left: 2185px;
-	top: -800px;
-	width: 400px;
+	left: 940px;
+	top: 500px;
+	width: 800px;
 	transform: rotate(90deg) translateX(50px);
 }
-.step6 {
-	left: 1000px;
-	top: 660px;
-	width: 580px;
+
+.step6 ul {
+	list-style: disc;
+	padding: 16px;
+}
+.step6 li {
+	margin: 4px;
 }
 
 div.journey {
 	display: none;
+	position: absolute;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
@@ -221,6 +178,7 @@ div.journey {
 }
 .sea .waves {
 	background-image: url("../assets/wave.png");
+	background-repeat: repeat-x;
 	height: 24px;
 	position: relative;
 	width: 100%;
@@ -231,6 +189,12 @@ div.journey {
 	height: 30px;
 	left: 0;
 	width: 100%;
+}
+.journey .goal {
+	position: absolute;
+	right: 2em;
+	bottom: 2em;
+	text-align: right;
 }
 
 .highlight {
@@ -270,7 +234,7 @@ div.journey {
 	}
 }
 
-button.text {
+button.text, input.textbutton {
 	font-size: 30px;
 	font-weight: bold;
 	line-height: 1.3em;
@@ -280,7 +244,7 @@ button.text {
 	background: black;
 	transform: rotate(-2deg);
 }
-button.text:hover {
+button.text:hover, input.textbutton:hover {
 	color: blueviolet;
 }
 span.c1 {
@@ -297,6 +261,20 @@ span.c2 {
 	padding: 2px 5px;
 	display: inline-block;
 }
+span.c3 {
+	background: black;
+	color: yellowgreen;
+	transform: rotate(1deg);
+	padding: 2px 5px;
+	display: inline-block;
+}
+#musiclicense {
+	font-size: 14px;
+	line-height: 32px;
+	position: fixed;
+	right: 40px;
+	top: 0;
+}
 #audiocontrol {
 	position: fixed;
 	top: 4px;
@@ -307,4 +285,11 @@ span.c2 {
 }
 #audiocontrol.off {
 	background-image: url("../assets/audio-off.png");
+}
+#home {
+	left: 1em;
+	position: fixed;
+	top: 0.5em;
+	transform: rotate(90deg);
+	transform-origin: 0 50%;
 }

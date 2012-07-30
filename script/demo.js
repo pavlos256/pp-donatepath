@@ -52,7 +52,7 @@ function init() {
 			name: "step6",
 			callback: function() {
 				$(".journey").show("slow");
-				$("#audiocontrol").show();
+				$(".surprise").show();
 				$("#music").attr("autoplay", "true");
 			}
 		});
