@@ -54,6 +54,7 @@ function init() {
 				$(".journey").show("slow");
 				$(".surprise").show();
 				$("#music").attr("autoplay", "true");
+				$("#music").get(0).play();
 			}
 		});
 
