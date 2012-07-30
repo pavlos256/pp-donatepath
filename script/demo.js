@@ -6,10 +6,10 @@ function init() {
 		// Move to 'step1' element
 		.moveTo(400, 50, {name: "step1"})
 		// Line to 'step2' element
-		.lineTo(400, 800, {name: "step2"})
+		.lineTo(400, 1100, {name: "step2"})
 		// Arc down and line to 'step3'
-		.arc(200, 1200, 400, -Math.PI/2, Math.PI/2, true)
-		.lineTo(600, 1600, {
+		.arc(300, 1650, 550, -Math.PI/2, Math.PI/2, true)
+		.lineTo(600, 2200, {
 			callback: function() {
 				setTimeout(function() {
 					highlight($("#btn3to4"))
@@ -18,11 +18,11 @@ function init() {
 			name: "step3"
 		})
 		// Continue line to 'step4'
-		.lineTo(1750, 1600, {name: "step4"})
+		.lineTo(2750, 2200, {name: "step4"})
 		// Arc up while rotating
-		.arc(1800, 1000, 600, Math.PI/2, 0, true, {rotate: Math.PI/2 })
+		.arc(2900, 1000, 1200, Math.PI/2, 0, true, {rotate: Math.PI/2 })
 		// Line to 'step5'
-		.lineTo(2400, 750, {
+		.lineTo(4100, 750, {
 			name: "step5",
 			callback: function() {
 				$("#music").attr("preload", "auto");
@@ -48,7 +48,7 @@ function init() {
 		})
 		
 		// Continue to 'step6'
-		.lineTo(1000+580/2, 660, {
+		.lineTo(1800, 750, {
 			name: "step6",
 			callback: function() {
 				$(".journey").show("slow");
@@ -59,6 +59,7 @@ function init() {
 
 	// We're done with the path, let's initate the plugin on our wrapper element
 	$(".wrapper").scrollPath({drawPath: false, wrapAround: false, scrollBar: false});
+	//$(".sp-canvas").toggle();
 
 	$("button.text").click(function() {
 		var target = $(this).data("goto");

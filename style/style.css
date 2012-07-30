@@ -107,27 +107,27 @@ a:active {
 }
 
 .step2 {
-	top: 740px;
+	top: 1040px;
 	left: 180px;
 	width: 440px;
 }
 
 .step3 {
-	top: 1510px;
+	top: 2110px;
 	left: 430px;
 	width: 400px;
 	text-align: center;
 }
 
 .step4 {
-	top: 1540px;
-	left: 1600px;
+	top: 2140px;
+	left: 2600px;
 	width: 400px;
 	text-align: center;
 }
 
 .step5 {
-	left: 2185px;
+	left: 3800px;
 	top: 660px;
 	width: 720px;
 	transform: rotate(-90deg) translateY(3.5em);
@@ -140,8 +140,8 @@ a:active {
 }
 
 .step6 {
-	left: 940px;
-	top: 500px;
+	left: 1440px;
+	top: 600px;
 	width: 800px;
 	transform: rotate(90deg) translateX(50px);
 }
