@@ -29,6 +29,12 @@ table {
 	border-spacing: 0;
 }
 /* === End of CSS RESET === */
+@font-face {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Jura DemiBold'), local('Jura-DemiBold'), url(../assets/jura600latingreek.woff) format('woff');
+}
 
 body {
 	background: url(../assets/classy_fabric.png);
@@ -170,7 +176,7 @@ nav a:hover {
 .step5 {
 	left: 2185px;
 	top: 660px;
-	width: 620px;
+	width: 720px;
 	transform: rotate(-90deg) translateY(3.5em);
 }
 
