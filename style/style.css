@@ -152,7 +152,7 @@ a:active {
 	padding: 16px;
 }
 .step6 li {
-	margin: 4px;
+	margin: 0 0 0.75em;
 }
 
 div.journey {
@@ -239,7 +239,6 @@ button.text, input.textbutton {
 	font-size: 30px;
 	font-weight: bold;
 	line-height: 1.3em;
-	margin-bottom: 10px;
 	border: none;
 	color: skyblue;
 	background: black;
